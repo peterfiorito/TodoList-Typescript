@@ -1,4 +1,5 @@
 import { todo } from '../types';
+import { formatDate } from '../services/helperFunctionsModule'
 
 import {
     ADD_TODO,
@@ -19,7 +20,7 @@ import {
         text: 'A sample todo',
         completed: false,
         id: 0,
-        date: new Date()
+        date: formatDate(new Date())
       }];
     }
     return initialState;

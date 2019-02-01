@@ -4,6 +4,8 @@ import TodoList from './TodoList'
 import TodoContainer from './containers/TodoContainer'
 import ToolBarContainer from './containers/ToolBarContainer'
 
+import './styles/App.scss'
+
 export interface Props{
   todos: Array<Object>;
 }
@@ -23,18 +25,22 @@ export default class App extends React.Component<Props> {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+        <header className="App__header">
           <h1>
             ToDo List!
           </h1>
         </header>
-        <div>
-          <TodoContainer todo={{text: '', completed: false, id: 0, editing: true, date: new Date()}}/>
+        <div className="App__wrapper">
+          <div className="App__toolbar">
+          <ToolBarContainer allTodos={this.props.todos} />
+          </div>
+          <div className="App__input">
+            <TodoContainer todo={{text: '', completed: false, id: 0, editing: true, date: new Date()}}/>
+          </div>
+          <div className="App__list">
+            <TodoList allTodos={this.props.todos}/>
+          </div>
         </div>
-        <div>
-          <TodoList allTodos={this.props.todos}/>
-        </div>
-        <ToolBarContainer allTodos={this.props.todos} />
       </div>
     );
   }

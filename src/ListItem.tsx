@@ -2,6 +2,9 @@ import * as React from "react";
 import { todo } from './types'
 import InputText from './InputText'
 import { ADD_TODO, EDIT_TODO, DELETE_TODO } from "./constants/ActionTypes";
+import { formatDate } from './services/helperFunctionsModule'
+
+import './styles/ListItem.scss'
 
 interface state {
   editing?: boolean;
@@ -45,9 +48,6 @@ export default class ListItem extends React.Component<Props, state> {
   handleDoubleClick(){
     this.setState({editing: true})
   }
-  formatDate(date: Date) {
-    return String(date).split(" ").slice(0,4).join(" ")
-  }
   render() {
     let element
     if (this.state.editing) {
@@ -61,12 +61,16 @@ export default class ListItem extends React.Component<Props, state> {
     } else {
       element = (
         <div className="list-item">
-          <label onDoubleClick={this.handleDoubleClick}>
-              {this.props.todo.text}
-          </label>
-          <div>{this.formatDate(this.props.todo.date)}</div>
+          <div>
+            <label onDoubleClick={this.handleDoubleClick}>
+                {this.props.todo.text}
+            </label>
+            <div className="list-item__date">{formatDate(this.props.todo.date)}</div>
+          </div>
           <button className="list-item__delete"
-                  onClick={() => this.deleteTodo((this.props.todo as any).id)} />
+                  onClick={() => this.deleteTodo((this.props.todo as any).id)} >
+                  <i className="fas fa-trash"></i>Delete
+          </button>
         </div>
       )
     }

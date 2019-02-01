@@ -1,0 +1,26 @@
+.tool-bar__button{
+  font-size: 18px;
+  background-color: white;
+  border: solid 1px #e5e5e5;
+  padding: 20px 40px;
+  cursor: pointer;
+  &.--save{
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    background-color: #4b93ff;
+    color: white;
+    border-color: #4b93ff;
+  }
+  &.--save:hover{
+    background-color: #0b65dd;
+  }
+  &.--delete{
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    &:hover{
+      background-color: #ff4b54;
+      color: white;
+      border-color: #ff4b54;
+    }
+  }
+}

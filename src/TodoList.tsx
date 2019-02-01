@@ -2,6 +2,8 @@ import * as React from "react";
 import { todo } from './types'
 import TodoContainer from './containers/TodoContainer'
 
+import './styles/TodoList.scss'
+
 type Props = {
   allTodos: Array<Object>;
 };

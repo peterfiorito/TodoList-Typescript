@@ -1,6 +1,8 @@
 import * as React from "react";
 import { DELETE_ALL } from './constants/ActionTypes'
 
+import './styles/ToolBar.scss'
+
 interface Props{
   allTodos: Array<Object>;
 }
@@ -21,9 +23,9 @@ export default class ToolBar extends React.Component<Props> {
   }
   render() {
     return (
-      <div className="tool-bar">
-        <button onClick={this.saveAll}>Save My Todo History</button>
-        <button onClick={this.deleteAll}>Delete my todo History</button>
+      <div className="tool-bar__wrapper">
+        <button onClick={this.saveAll} className="tool-bar__button --save">Save List</button>
+        <button onClick={this.deleteAll} className="tool-bar__button --delete">Delete List</button>
       </div>
     );
   }

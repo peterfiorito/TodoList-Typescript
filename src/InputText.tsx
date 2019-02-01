@@ -1,4 +1,5 @@
 import * as React from "react";
+import './styles/InputText.scss'
 
 type Props = {
     onSave: Function,
@@ -35,6 +36,7 @@ export default class InputText extends React.Component <Props>{
   render() {
     return (
       <input
+        className="input-text"
         type="text"
         placeholder={this.props.placeholder}
         autoFocus={true}
