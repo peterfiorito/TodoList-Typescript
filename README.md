@@ -7,6 +7,9 @@ Reactjs-Typescript ToDo list
 * Babel and webpack and webpack-dev-server configured
 * Hot reload for reactjs added to webpack for quicker development process
 
-### Available scripts so far
+### Available scripts
 ``` npm run start ```
-Starts webpack-dev-server with hot reload. You can change port and host in the config files.
+Starts webpack-dev-server with hot reload. You can change port and host in the config files.  
+
+``` npm run unit ```
+Run available unit tests.
