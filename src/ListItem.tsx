@@ -1,7 +1,7 @@
 import * as React from "react";
 import { todo } from './types'
 import InputText from './InputText'
-import { ADD_TODO, EDIT_TODO, DELETE_TODO } from "./constants/ActionTypes";
+import { ADD_TODO, EDIT_TODO, DELETE_TODO, COMPLETE_TODO } from "./constants/ActionTypes";
 import { formatDate } from './services/helperFunctionsModule'
 
 import './styles/ListItem.scss'
@@ -48,6 +48,9 @@ export default class ListItem extends React.Component<Props, state> {
   handleDoubleClick(){
     this.setState({editing: true})
   }
+  markTodoCompleted(id: number){
+    (this.props as any).dispatch({type: COMPLETE_TODO, id: id})
+  }
   render() {
     let element
     if (this.state.editing) {
@@ -61,8 +64,14 @@ export default class ListItem extends React.Component<Props, state> {
     } else {
       element = (
         <div className="list-item">
-          <div>
-            <label onDoubleClick={this.handleDoubleClick}>
+          <div className="list-item__checkbox--wrapper">
+            <input  className="list-item__checkbox" 
+                    type="checkbox" 
+                    checked={this.props.todo.completed} onChange={() => this.markTodoCompleted(this.props.todo.id)}/>
+          </div>
+          <div className="list-item__text--wrapper">
+            <label  onDoubleClick={this.handleDoubleClick} 
+                    className={this.props.todo.completed ? "list-item__text--completed" : "list-item__text"}>
                 {this.props.todo.text}
             </label>
             <div className="list-item__date">{formatDate(this.props.todo.date)}</div>
