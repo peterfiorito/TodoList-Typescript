@@ -8,6 +8,8 @@ Reactjs-Typescript ToDo list
 * Hot reload for reactjs added to webpack for quicker development process
 
 ### Available scripts
+Run ``` npm install``` after cloning the repo.
+
 ``` npm run start ```
 Starts webpack-dev-server with hot reload. You can change port and host in the config files.  
 
