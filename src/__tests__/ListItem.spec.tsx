@@ -17,6 +17,7 @@ describe('ListItem methods', () => {
       let todo = {
         text: '',
         completed: false,
+        editing: true,
         id: 0,
         date: new Date()
       };
@@ -34,6 +35,7 @@ describe('ListItem methods', () => {
       let todo = {
         text: 'Test Text',
         completed: false,
+        editing: false,
         id: 0,
         date: new Date()
       };
@@ -50,6 +52,7 @@ describe('ListItem methods', () => {
       let todo = {
         text: 'Test Text',
         completed: false,
+        editing: false,
         id: 0,
         date: new Date()
       };
@@ -66,6 +69,7 @@ describe('ListItem methods', () => {
       let todo = {
         text: 'Test Text',
         completed: false,
+        editing: false,
         id: 0,
         date: new Date()
       };
@@ -85,6 +89,7 @@ describe('ListItem methods', () => {
       let todo = {
         text: 'Test Text',
         completed: false,
+        editing: false,
         id: 0,
         date: new Date()
       };
