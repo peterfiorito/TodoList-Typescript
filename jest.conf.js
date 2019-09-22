@@ -1,5 +1,3 @@
-const { defaults } = require('jest-config');
-
 module.exports = {
     setupFiles:["<rootDir>/config/test-setup.js"],
     moduleFileExtensions: ["js", "json", "tsx"],
