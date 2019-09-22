@@ -36,7 +36,6 @@ export interface DispatchFromProps {
 export interface todo{
   text: string,
   completed: boolean,
-  editing: boolean,
   id: number,
   date: Date
 }
