@@ -35,7 +35,7 @@ export default class App extends React.Component<Props> {
           <ToolBarContainer allTodos={this.props.todos} />
           </div>
           <div className="App__input">
-            <TodoContainer todo={{text: '', completed: false, id: 0, date: new Date()}}/>
+            <TodoContainer todo={{text: '', completed: false, editing: true, id: 0, date: new Date()}}/>
           </div>
           <div className="App__list">
             <TodoList allTodos={this.props.todos}/>
